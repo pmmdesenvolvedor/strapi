@@ -23,5 +23,3 @@ module.exports = () => ({
     }
   }
 });
-
-//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
