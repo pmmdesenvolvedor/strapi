@@ -4,14 +4,11 @@ module.exports = () => ({
       provider: 'aws-s3',
       providerOptions: {
         s3Options: {
-          // @ts-ignore
-          accessKeyId: env('AWS_ACCESS_KEY_ID'),
-          // @ts-ignore
-          secretAccessKey: env('AWS_ACCESS_SECRET'),
-          // @ts-ignore
-          region: env('AWS_REGION', 'eu-west-1'),
+          accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+          secretAccessKey: process.env.AWS_ACCESS_SECRET,
+          region: process.env.AWS_REGION ||  'eu-west-1',
           params: {
-            Bucket: env('AWS_BUCKET_NAME'),
+            Bucket: process.env.AWS_BUCKET_NAME,
           }
         }
       },
@@ -26,3 +23,5 @@ module.exports = () => ({
     }
   }
 });
+
+//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
